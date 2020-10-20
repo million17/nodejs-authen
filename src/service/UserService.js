@@ -52,6 +52,7 @@ const signIn = async (req) => {
         return false;
     } else {
         let comparePass = await bcrypt.compare(req.body.password, user.password);
+        // let comparePass = (req.body.password === user.password) ? true : false;
         if (comparePass === false) {
             return false;
         } else {

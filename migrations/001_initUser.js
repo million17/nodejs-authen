@@ -18,7 +18,7 @@ module.exports = {
                 allowNull: false,
             },
             role: {
-                type: Sequelize.ENUM('admin','user'),
+                type: Sequelize.ENUM('ADMIN','USER'),
                 allowNull: false,
             },
             password: {
@@ -39,7 +39,7 @@ module.exports = {
             return queryInterface.addIndex("user", ["id"])
         });
     },
-    down: (queryInterface, Sequelize) => {
+    down: (queryInterface) => {
         return queryInterface.dropTable("user")
     }
 }

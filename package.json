@@ -5,7 +5,7 @@
   "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon src/index.js",
+    "start": "nodemon --exec babel-node src/index.js",
     "db:create": "npx sequelize db:create",
     "db:migrate": "npx sequelize db:migrate"
   },
@@ -20,6 +20,9 @@
   },
   "homepage": "https://github.com/million17/nodejs-authen#readme",
   "dependencies": {
+    "@babel/core": "^7.12.3",
+    "@babel/node": "^7.12.1",
+    "@babel/preset-env": "^7.12.1",
     "bcrypt": "^5.0.0",
     "body-parser": "^1.19.0",
     "dotenv": "^8.2.0",

@@ -13,7 +13,7 @@ const {registerValidator} = require('../validate/UserValidator');
 router.post('/user', async (req, res) => {
     try {
         let validator = await registerValidator(req);
-        if (validator !== null) {
+        if (!!validator) {
             return res.send({message: validator});
         } else {
             let registed = await register(req.body);

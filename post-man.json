@@ -1,0 +1,109 @@
+{
+	"id": "6a5c7b4c-10c9-95d5-8fc6-6e8cfa5311d4",
+	"name": "Authen-NodeJs",
+	"description": "",
+	"order": [
+		"fb9563a4-a1d3-6d8b-8f15-f57fcaa80d03",
+		"32154221-7d4a-b285-5a80-e13bd148cce8",
+		"89bfdf33-9e73-e052-cd44-a2b155d7925f"
+	],
+	"folders": [],
+	"folders_order": [],
+	"timestamp": 1603183319705,
+	"owner": 0,
+	"public": false,
+	"requests": [
+		{
+			"id": "32154221-7d4a-b285-5a80-e13bd148cce8",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "localhost:8000/logout",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "GET",
+			"collectionId": "6a5c7b4c-10c9-95d5-8fc6-6e8cfa5311d4",
+			"data": [],
+			"dataMode": "raw",
+			"name": "Logout",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1603183391073,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"rawModeData": "{\n\t\"email\": \"trieu.ngoquang@vti.com.vn\",\n\t\"password\": \"123456\"\n}"
+		},
+		{
+			"id": "89bfdf33-9e73-e052-cd44-a2b155d7925f",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "localhost:8000/user",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "POST",
+			"collectionId": "6a5c7b4c-10c9-95d5-8fc6-6e8cfa5311d4",
+			"data": [],
+			"dataMode": "raw",
+			"name": "Register",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1603184680288,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"rawModeData": "{\n\t\"email\": \"ngoquangtrieu99tb@gmail.com.vn\",\n\t\"username\": \"quangtrieu\",\n\t\"password\": \"123456\",\n\t\"password_confirmation\": \"123456\"\n}"
+		},
+		{
+			"id": "fb9563a4-a1d3-6d8b-8f15-f57fcaa80d03",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "localhost:8000/login",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1603185213404,
+			"name": "Login",
+			"description": "",
+			"collectionId": "6a5c7b4c-10c9-95d5-8fc6-6e8cfa5311d4",
+			"responses": [],
+			"rawModeData": "{\n\t\"email\": \"ngoquangtrieu99tb@gmail.com.vn\",\n\t\"password\": \"123456\"\n}"
+		}
+	]
+}

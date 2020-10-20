@@ -1,12 +1,14 @@
-const express = require('express');
-const morgan = require('morgan');
-const bodyParser = require('body-parser');
-const expressValidator = require('express-validator')
-const session = require('express-session');
+import express from 'express';
+import morgan from 'morgan';
+import bodyParser from 'body-parser';
+import expressValidator from 'express-validator';
+import session from 'express-session';
 const MySQLStore = require('express-mysql-session')(session)
 require('dotenv').config();
 
 const env = process.env;
+const userRouter = require('./controller/UserController');
+const postRouter = require('./controller/PostController');
 
 const app = express();
 const PORT = env.PORT;
@@ -33,8 +35,8 @@ app.use(morgan("dev"))
 app.use(bodyParser.json())
 app.use(expressValidator())
 
-app.use('/', require('./controller/UserController'));
-app.use('/post', require('./controller/PostController'))
+app.use('', userRouter);
+app.use('/post', postRouter);
 
 app.listen(PORT, () => {
     console.log(`Server start ${PORT}`)

@@ -3,7 +3,7 @@
  * @param req
  * @returns {Promise<null|*>}
  */
-const raiseErr = async (req) => {
+export const raiseErr = async (req) => {
     let errors = await req.getValidationResult();
     if (!errors.isEmpty()) {
         let err = errors.array();
@@ -13,4 +13,3 @@ const raiseErr = async (req) => {
     return null;
 }
 
-module.exports = raiseErr;
