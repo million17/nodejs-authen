@@ -33,8 +33,11 @@ app.use(morgan("dev"))
 app.use(bodyParser.json())
 app.use(expressValidator())
 
-app.get('/', require('./controller/UserController'));
+app.use('/', require('./controller/UserController'));
+app.use('/post', require('./controller/PostController'))
 
 app.listen(PORT, () => {
     console.log(`Server start ${PORT}`)
 })
+
+module.exports = app;

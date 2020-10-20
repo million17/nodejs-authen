@@ -1,10 +1,14 @@
 "use strict";
-import {ROLE} from '../constant/constant'
+const {ROLE} =  require('../constant/constant');
 
 const Sequelize = require('sequelize');
-const sequelize = require('../../config/db');
+const sequelize = require('../../config/db').sequelize;
 
-export const User = sequelize.define("user", {
+const {Post} = require('../model/Post');
+
+
+
+let User = sequelize.define("user", {
         email: Sequelize.STRING,
         username: Sequelize.STRING,
         password: Sequelize.STRING,
@@ -12,16 +16,25 @@ export const User = sequelize.define("user", {
             type: Sequelize.ENUM(ROLE.ROLE_ADMIN, ROLE.ROLE_USER),
         },
     }, {
-    tableName: 'user',
-    createdAt: 'created_at',
-    updatedAt: 'updated_at',
-    indexes: [
-        {
-            unique: true,
-            fields: ["id"],
-        }
-    ],
-    charset: 'utf8',
-    collate: 'utf8_unicode_ci',
+        tableName: 'user',
+        createdAt: 'created_at',
+        updatedAt: 'updated_at',
+        indexes: [
+            {
+                unique: true,
+                fields: ["id"],
+            }
+        ],
+        charset: 'utf8',
+        collate: 'utf8_unicode_ci',
     }
 );
+
+User.hasMany(Post, {
+    as: 'post',
+    foreignKey: 'poster',
+})
+
+module.exports = {
+    User
+};

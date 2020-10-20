@@ -1,15 +1,12 @@
-import {VALIDATOR } from '../constant/constant';
-const raiseErr = async (req) => {
-    let errors = await req.getValidationResult();
-    if(!errors.isEmpty()) {
-        let err = errors.array();
-        let firstErr = err.map(error => error.msg)[0];
-        return firstErr;
-    }
-    return null;
-}
+const {VALIDATOR} = require('../constant/constant');
+const {raiseErr} = require('./common');
 
-export const registerValidator = async (req) => {
+/**
+ * Register Validator
+ * @param req
+ * @returns {Promise<*>}
+ */
+const registerValidator = async (req) => {
     !req.check('email', `email ${VALIDATOR.REQUIRED}`).isEmpty();
     req.check('email', `email ${VALIDATOR.INVALID}`).isEmail();
     !req.check('username', `username ${VALIDATOR.REQUIRED}`).isEmpty();
@@ -20,4 +17,25 @@ export const registerValidator = async (req) => {
 
     //check for err
     return await raiseErr(req);
+}
+
+/**
+ * Login Validator
+ * @param req
+ * @returns {Promise<*>}
+ */
+const loginValidator = async (req) => {
+    !req.check('email', `email ${VALIDATOR.REQUIRED}`).isEmpty();
+    req.check('email', `email ${VALIDATOR.INVALID}`).isEmail();
+    !req.check('password', `password ${VALIDATOR.REQUIRED}`).isEmpty();
+    req.check('password', `password ${VALIDATOR.LENGTH}`).isLength({min: 6});
+
+    //check for err
+    return await raiseErr(req);
+
+}
+
+module.exports = {
+    loginValidator,
+    registerValidator,
 }
