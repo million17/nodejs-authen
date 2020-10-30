@@ -11,7 +11,7 @@ const {postValidator} = require('../validate/PostValidator');
 /**
  * Create Post
  */
-router.post('/', async (req, res) => {
+router.post('', async (req, res) => {
     try {
         let titlePost = req.body.title;
         let contentPost = req.body.content;
@@ -33,7 +33,7 @@ router.post('/', async (req, res) => {
  */
 router.get("/:postId", async (req, res) => {
     try {
-        let postId = req.params;
+        let postId = req.params.postId;
         let result = await getPost(postId);
         if (!result) return res.status(404).send({message: 'Not found Post'});
         return res.send({result})
