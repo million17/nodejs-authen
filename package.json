@@ -2,10 +2,10 @@
   "name": "nodejs-authen",
   "version": "1.0.0",
   "description": "",
-  "main": "src/index.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon --exec babel-node src/index.js",
+    "start": "nodemon --exec babel-node index.js",
     "db:create": "npx sequelize db:create",
     "db:migrate": "npx sequelize db:migrate"
   },

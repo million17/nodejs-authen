@@ -2,9 +2,9 @@
 const {ROLE} =  require('../constant/constant');
 
 const Sequelize = require('sequelize');
-const sequelize = require('../../config/db').sequelize;
+const sequelize = require('../config/db').sequelize;
 
-const {Post} = require('../model/Post');
+const {Post} = require('./Post');
 
 
 

@@ -33,6 +33,7 @@ router.post('/user', async (req, res) => {
  */
 router.post("/login", async (req, res) => {
     try {
+        console.log(req.session)
         let isLogged = await isLogging(req);
         if (isLogged === true) {
             return res.send({message: 'You are logged in.'});

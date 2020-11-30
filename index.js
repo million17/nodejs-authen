@@ -7,8 +7,8 @@ const MySQLStore = require('express-mysql-session')(session)
 require('dotenv').config();
 
 const env = process.env;
-const userRouter = require('./controller/UserController');
-const postRouter = require('./controller/PostController');
+const userRouter = require('./router/UserController');
+const postRouter = require('./router/PostController');
 
 const app = express();
 const PORT = env.PORT;

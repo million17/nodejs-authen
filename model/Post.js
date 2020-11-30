@@ -1,7 +1,7 @@
 'use strict';
 
 const Sequelize = require("sequelize");
-const sequelize = require('../../config/db').sequelize;
+const sequelize = require('../config/db').sequelize;
 
 const Post = sequelize.define("post", {
     title: Sequelize.STRING,
